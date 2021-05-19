@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Received messages:</h1>
+        <div id="container">
+        </div>
+        <script>
+            var container = document.getElementById("container");
+            var source = new EventSource('http://localhost:8000');
+
+            source.onopen = function(event) {
+                console.log("connected", event);
+            }
+
+            source.onerror = function(event) {
+                console.log("error", event);
+            }
+
+            source.onmessage = function(event) {
+                const p = document.createElement("p");
+                const text = document.createTextNode(event.data);
+                p.appendChild(text);
+
+                container.appendChild(p);
+            };
+        </script>
+    </body>
+</html>
