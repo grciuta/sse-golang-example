@@ -4,7 +4,7 @@ This is an example of SSE server and client implementation using Golang.
 
 Main idea - is to implement connections management without using any channels.
 
-You can read more about it [here!]()
+You can read more about it [here!](https://grciuta.medium.com/server-sent-events-with-go-server-and-client-sides-6812dca45c7)
 
 ## Usage
 
